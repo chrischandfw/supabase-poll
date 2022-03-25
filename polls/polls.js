@@ -1,6 +1,7 @@
 import { createPoll, getPolls } from '../fetch-utils.js';
+import { renderPoll } from '../render-utils.js';
 
-const currentPollContainer = document.querySelector('.current-poll-container');
+//const currentPollContainer = document.querySelector('.current-poll-container');
 const publishButton = document.querySelector('.publish-button');
 const pollFarmEl = document.querySelector('.poll-farm-list');
 
@@ -28,6 +29,8 @@ formEl.addEventListener('submit', (e) => {
     currentQuestion = data.get('question');
     option1 = data.get('option-1');
     option2 = data.get('option-2');
+    vote1 = data.get('option1-votes');
+    vote2 = data.get('option2-votes');
 
     displayCurrentQuestion();
 	
@@ -35,6 +38,7 @@ formEl.addEventListener('submit', (e) => {
 
 });
 publishButton.addEventListener('click', () => {
+    //await createPoll(currentQuestion, option1, option2, vote1, vote2);
     const farmPoll = {
         question: currentQuestion, 
         option_1: option1, 
@@ -51,7 +55,7 @@ publishButton.addEventListener('click', () => {
     vote1 = 0;
     vote2 = 0;
 
-    displayCurrentQuestion();
+    fetchAndDisplayPolls();
 	
 });
 
@@ -79,20 +83,21 @@ subtractOption2Button.addEventListener('click', () => {
 
 
 function displayCurrentQuestion() {
+    //currentPollContainer.textContent = 
     currentQuestEl.textContent = currentQuestion;
     currentOp1El.textContent = option1;
     currentOp2El.textContent = option2;
 }
 
 //for every async function, there is await
-/*async function fetchAndDisplayPolls() {
+async function fetchAndDisplayPolls() {
     const polls = await getPolls();
 
 
     pollFarmEl.textContent = '';
     for (let poll of polls) {
-        const newPoll = await renderPoll(poll);
+        const newPoll = renderPoll(poll);
 
-		pollFarmEl.append(newPoll);
+        pollFarmEl.append(newPoll);
     }
-}*/
+}
