@@ -59,3 +59,4 @@ function displayCurrentQuestion() {
     currentOp1El.textContent = option1;
     currentOp2El.textContent = option2;
 }
+
