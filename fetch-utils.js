@@ -6,17 +6,11 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 //we need 2 async functions to create poll and get poll
 
-export async function createPoll() {
+export async function createPoll(myPastPoll) {
     const response = await client
         .from('poll_farm')
-        .insert({ 
-			//snake cases match supabase table (sql data)
-            question: 'someValue', 
-            option_1: 'someValue', 
-            option_2: 'someValue',
-            votes_1: 0,
-            votes_2: 0, 
-        });
+        .insert(myPastPoll);
+		
     return response.body;
 }
 
