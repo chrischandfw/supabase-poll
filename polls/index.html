@@ -18,30 +18,37 @@
             <form>
 				<label>
 					Question
-					<input />
+					<input name="question"/>
 				</label>
 				<label>
 					Option 1
-					<input />
+					<input name="option-1"/>
 				</label>
 				<label>
 					Option 2
-					<input />
+					<input name="option-2"/>
 				</label>
-				<button>Launch Poll</button>
+				<button class="launch-button">Launch Poll</button>
 			</form>
 			<h3>Current Poll</h3>
+			<br>
 			<div class="current-poll-container">
-
-			</div>
+				<h3 class="current-question">Question</h3>
+					<p class="option-one">Option 1</p>
+					<button>+</button>
+					<button>-</button>
+					<p class="option-two">Option 2</p>
+					<button>+</button>
+					<button>-</button>
+			</div>		
 			<br>
 			<div>
-				<button>Publish Poll</button>
+				<button class="publish-button">Publish Poll</button>
 			</div>
 			<br>
 			<h3>Poll Farm</h3>
 			<div class="poll-farm-list">
-				
+
 			</div>
         </section>
     </main>

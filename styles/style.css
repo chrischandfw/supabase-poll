@@ -91,53 +91,29 @@ footer {
 }
 
 .current-poll-container {
-	/*border: solid 7px rgb(0, 0, 0);*/
-	/*box-shadow: var(--shadow);*/
+	border: solid 7px gold;
 	border-radius: 31px;
 	width: 100%;
-    height: 200px;
-    /*box-shadow: 15px 15px 17px gold;*/
+    height: 275px;
     border-radius: 11px;
-    position: relative;
-    overflow: hidden;
+    /*position: relative;
+    overflow: hidden;*/
     display: flex;
     justify-content: center;
     align-items: center;
+	flex-direction: column;
 }
 
-.current-poll-container::before{
-	content: "";
-	background-image: conic-gradient(
-		gold 20deg,
-		transparent 120deg
-	);
-	width: 150%;
-	height: 150%;
-	position: absolute;
-	animation: rotate 2s linear infinite;
+.current-poll-container p, .current-poll-container h3 {
+	margin: 0;
 }
-.current-poll-container::after{
-	content: "";
-	width: 100%;
-	height: 190px;
-	background: antiquewhite;
-	position: absolute;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: black;
-	font-size: larger;
-	letter-spacing: 5px;
-	/*box-shadow: inset 11px 11px 11px gold;*/
+
+h3 {
+	text-align: center;
 }
-@keyframes rotate {
-	0%{
-		transform: rotate(0deg);
-	}
-	100%{
-		transform: rotate(-360deg);
-	}
+
+p {
+	flex-direction: column;
 }
 
 button {
