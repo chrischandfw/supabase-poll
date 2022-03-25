@@ -49,7 +49,6 @@ formEl.addEventListener('submit', (e) => {
 
 });
 publishButton.addEventListener('click', () => {
-    //await createPoll(currentQuestion, option1, option2, vote1, vote2);
     const farmPoll = {
         question: currentQuestion, 
         option_1: option1, 
