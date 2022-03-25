@@ -1,5 +1,7 @@
-import { createPoll, getPolls } from '../fetch-utils.js';
+import { createPoll, getPolls, logout, checkLoggedIn } from '../fetch-utils.js';
 import { renderPoll } from '../render-utils.js';
+
+checkLoggedIn();
 
 //const currentPollContainer = document.querySelector('.current-poll-container');
 const publishButton = document.querySelector('.publish-button');
@@ -13,13 +15,22 @@ const currentOp2El = document.querySelector('.option-two');
 const addOption1Button = document.querySelector('.add-option-one');
 const subtractOption1Button = document.querySelector('.subtract-option-one');
 const addOption2Button = document.querySelector('.add-option-two');
-const subtractOption2Button = document.querySelector('.subtract-option-two'); 
+const subtractOption2Button = document.querySelector('.subtract-option-two');
+const logoutButtonEl = document.querySelector('#logout'); 
 
 let currentQuestion = 'Default Question';
 let option1 = 'Default Option 1';
 let option2 = 'Default Option 2';
 let vote1 = 0;
 let vote2 = 0;
+
+window.addEventListener('load', async () => {
+    await fetchAndDisplayPolls();
+});
+
+logoutButtonEl.addEventListener('click', async () => {
+    await logout();
+});
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
