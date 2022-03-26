@@ -3,10 +3,10 @@ body {
     /* feel free to update these css variables for a quick theme */
     
     --color1: white;
-    --color2: white;
+    --color2: gold;
     --color3: white;
     --color4: white;
-    --color5: white;
+    --color5: gold;
     
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         
@@ -23,12 +23,12 @@ body {
     --color5: hsla(224, 40%, 79%, 1); */
     
     --header-height: 80px;
-    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    --shadow: 10px 10px 13px 13px goldenrod;
     --gutter: 30px;
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color: antiquewhite;
 }
 
 main {
@@ -40,7 +40,7 @@ main {
 }
 
 section {
-    background-color: var(--color5);
+    background-color: antiquewhite;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -50,16 +50,16 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    /*border: solid 2px var(--color1);*/
 }
 
-header {
+/*header {
     display: flex;
     justify-content: flex-end;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
-}
+}*/
 
 
 h2 {
@@ -86,6 +86,71 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+    background-color: transparent;
+    /*box-shadow: var(--shadow);*/
 }
+
+#logout {
+	align-items: center;
+}
+
+.current-poll-container {
+	border: solid 7px gold;
+	border-radius: 31px;
+	width: 100%;
+    height: 275px;
+    border-radius: 11px;
+    /*position: relative;
+    overflow: hidden;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+}
+
+.current-poll-container p, .current-poll-container h3 {
+	margin: 0;
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	flex-direction: column;
+}
+
+button {
+	border-radius: 31px;
+}
+
+button:hover {
+	background-color: gold;
+}
+
+.poll-farm-list {
+	width: 100%;
+	min-height: 200px;
+	border: solid 3px black;
+	margin: 11px;
+	border-radius: 11px;
+	display: flex;
+	background-color: gold;
+	/*justify-content: center;
+	align-items: center;	
+	flex-direction: column;*/
+}
+
+/*.auth-forms {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}*/
+
+/*.main-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}*/

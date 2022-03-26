@@ -24,3 +24,27 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+##Html Setup
+
+- Question Submit form w/ 3 fields and a button
+- Current question vote container with 4 buttons to up and down vote option 1 & option 2
+- Finish current poll button
+- Past polls list
+
+##State
+- Local state: current question, options, and vote tallies
+- Supabase state: past polls
+
+##Events
+- User clicks to launch new poll
+- View: inject question and options into div for user to interact with
+- State: update question and 2 options in state
+- View: Clear out form
+- User votes + or - for option 1 and option 2
+- State: votes for that option increment or decrement in state
+- On click of Finish Poll - take current poll and add to past polls in supabase
+	- Refetch polls from supabase and redisplay list (clear DOM, render, and append)
+
+
+

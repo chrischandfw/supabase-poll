@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+	<button id="logout">Logout</button>
+    <main>
+        <section class="main-section">
+            <form>
+				<label>
+					Question
+					<input name="question"/>
+				</label>
+				<label>
+					Option 1
+					<input name="option-1"/>
+				</label>
+				<label>
+					Option 2
+					<input name="option-2"/>
+				</label>
+				<button class="launch-button">Launch Poll</button>
+			</form>
+			<h3>Current Poll</h3>
+			<br>
+			<div class="current-poll-container">
+				<h3 class="current-question">Question</h3>
+					
+					<p class="option-one">Option 1</p>
+					<!--<div class="option1-votes">0</div>-->
+					<button class="add-option-one">+</button>
+					<button class="subtract-option-one">-</button>
+				
+					<p class="option-two">Option 2</p>
+					<!--<div class="option2-votes">0</div>-->
+					<button class="add-option-two">+</button>
+					<button class="subtract-option-two">-</button>
+			</div>		
+			<br>
+			<div>
+				<button class="publish-button">Publish Poll</button>
+			</div>
+			<br>
+			<h3>Poll Farm</h3>
+			<div class="poll-farm-list">
+
+			</div>
+        </section>
+    </main>
+    <footer>
+        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
+    </footer>
+
+    <script type="module" src="./polls.js"></script>
+</body>
+
+</html>
