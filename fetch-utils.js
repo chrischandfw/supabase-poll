@@ -54,6 +54,15 @@ export async function signUp(realEmail, realPassword) {
     return response.user;
 }
 
+export async function signIn(realEmail, realPassword) {
+    const response = await client.auth.signIn({
+        email: realEmail,
+        password: realPassword,
+    });
+
+    return response.user;
+}
+
 export async function redirectPolls() {
     if (await getUser()) {
         window.location.href = './polls';
