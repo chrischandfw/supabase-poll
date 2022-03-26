@@ -11,7 +11,7 @@ export async function createPoll(i) {
     const response = await client
         .from('poll_farm')
         .insert(i);
-		
+
     return response.body;
 }
 
@@ -20,7 +20,7 @@ export async function getPolls() {
     const response = await client
         .from('poll_farm')
         .select('*');
-
+    console.log(response);
     return response.body;
 }
 
@@ -42,14 +42,25 @@ export async function logout() {
 
 export async function signUp(realEmail, realPassword) {
 
-    console.log('before sign up', client.auth.user());
+    //console.log('before sign up', client.auth.user());
 
     const response = await client.auth.signUp({
         email: realEmail,
         password: realPassword,
     });
 
-    console.log('after sign up', client.auth.user());
+    //console.log('after sign up', client.auth.user());
 
     return response.user;
 }
+
+export async function redirectPolls() {
+    if (await getUser()) {
+        window.location.href = './polls';
+    }
+} 
+
+/*const { user, session, error } = await supabase.auth.signUp({
+	email: 'example@email.com',
+	password: 'example-password',
+  })*/

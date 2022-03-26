@@ -1,6 +1,7 @@
-import { signUp } from './fetch-utils';
+import { redirectPolls, signUp } from './fetch-utils.js';
 
 const signUpForm = document.querySelector('#sign-up');
+const signInForm = document.querySelector('#sign-in');
 
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -12,5 +13,22 @@ signUpForm.addEventListener('submit', async (e) => {
     const password = data.get('password');
     await signUp(email, password);
 	
-    window.location.href = './polls';
+    redirectPolls();
+
 });
+
+signInForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+    const data = new FormData(signInForm);
+
+    const email = data.get('email');
+
+    const password = data.get('password');
+    //await signUp(email, password);
+	
+    redirectPolls();
+
+});
+
+

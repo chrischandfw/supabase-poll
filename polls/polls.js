@@ -30,6 +30,8 @@ window.addEventListener('load', async () => {
 
 logoutButtonEl.addEventListener('click', async () => {
     await logout();
+
+    window.location.href = '../';
 });
 
 formEl.addEventListener('submit', (e) => {
@@ -48,7 +50,7 @@ formEl.addEventListener('submit', (e) => {
     formEl.reset();
 
 });
-publishButton.addEventListener('click', () => {
+publishButton.addEventListener('click', async () => {
     const farmPoll = {
         question: currentQuestion, 
         option_1: option1, 
@@ -57,15 +59,16 @@ publishButton.addEventListener('click', () => {
         votes_2: vote2, 
     };
 
-    createPoll(farmPoll);
-
+    await createPoll(farmPoll);
+	
+    await fetchAndDisplayPolls();
     currentQuestion = '';
     option1 = '';
     option2 = '';
     vote1 = 0;
     vote2 = 0;
 
-    fetchAndDisplayPolls();
+    displayCurrentQuestion();
 	
 });
 
