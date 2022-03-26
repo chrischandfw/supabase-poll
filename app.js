@@ -25,7 +25,7 @@ signInForm.addEventListener('submit', async (e) => {
     const email = data.get('email');
 
     const password = data.get('password');
-    //await signUp(email, password);
+    await signUp(email, password);
 	
     redirectPolls();
 
